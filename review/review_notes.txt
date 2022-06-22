@@ -1,0 +1,78 @@
+use DRY approach (vars needlessly repeated across multiple test files) - put it in a resource file / use single test file
+multiple test with same start (open browser+maximize window) -> use "Test Setup" / "Suite Setup"
+multiple test with same end (close browser) -> Use "Test Teardown" / "Suite Teardown"
+use keyword abstraction - keyword layer for repeated use of kwrds - easier to understand test targets for non-contributors
+there is a CLI option -d (short for directory) which creates a folder for log.html, output.xml, report.html and screenshot files
+
+countProducts.robot:
+- scrolled into view + asserted - no need, assertion is enough (simply needs to be a part of DOM, duplicated effort in a way)
+functional, gj
+
+searchProduct.robot:
+- Wait Until Location Is    http://tutorialsninja.com/demo/index.php?route=product/search&search=Canon - assertion not good enuf - if error then still passed... needs more
++
+better to wait until next element is visible, url might be the target one but DOM might not be loaded (???) - not 100% sure how selenium handles this or if it waits for loaded page, imho not though
+
+sortBy.robot:
+- same as before with wait until location is
+
+toCart.robot:
+Adding Product to Cart:
+    - success message doesn't necessarily mean successful operation - wouldn't trust it! better to assert item added in cart
+
+Deleting Product from Cart:
+    - doesn't always work properly (2 items left?) - needs a bit of wait time / ancestor button has aria-expanded="true" or "false" - wait for that ideally (or wait until element is enabled e.g.) on ${remove_button}
+
+- 2nd test dependent on 1st via open/close browser and added product in cart to be deleted (cannot run in parallel) - make it one test? Make adding an item a precondition for second test (e.g. via test setup. api can be used as well - faster & more dependent)
+
+writeReview.robot:
+- imho no need to scroll on such a page (but not 100% sure, elaborate pls? - rather wait till visible)
+- //img[contains(@alt, "Canon")] hits 2 results (ideally use unique locators)
+
+
+
+robocop finds (best practices - not a dealbreaker):
+C:\_git\Bootcamp3\tests\countProducts.robot:1:1 [W] 0203 Missing documentation in suite (missing-doc-suite)
+C:\_git\Bootcamp3\tests\countProducts.robot:8:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\countProducts.robot:9:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\countProducts.robot:12:1 [W] 1003 Invalid number of empty lines between sections (3/2) (empty-lines-between-sections)
+C:\_git\Bootcamp3\tests\countProducts.robot:14:1 [W] 0202 Missing documentation in test case (missing-doc-test-case)
+C:\_git\Bootcamp3\tests\countProducts.robot:23:1 [W] 1010 Too many blank lines at the end of file (too-many-trailing-blank-lines)
+C:\_git\Bootcamp3\tests\countProducts.robot:23:4 [W] 1001 Trailing whitespace at the end of line (trailing-whitespace)
+C:\_git\Bootcamp3\tests\searchProduct.robot:1:1 [W] 0203 Missing documentation in suite (missing-doc-suite)
+C:\_git\Bootcamp3\tests\searchProduct.robot:8:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\searchProduct.robot:9:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\searchProduct.robot:12:1 [W] 1003 Invalid number of empty lines between sections (3/2) (empty-lines-between-sections)
+C:\_git\Bootcamp3\tests\searchProduct.robot:14:1 [W] 0202 Missing documentation in test case (missing-doc-test-case)
+C:\_git\Bootcamp3\tests\sortBy.robot:1:1 [W] 0203 Missing documentation in suite (missing-doc-suite)
+C:\_git\Bootcamp3\tests\sortBy.robot:8:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\sortBy.robot:9:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\sortBy.robot:10:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\sortBy.robot:11:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\sortBy.robot:12:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\sortBy.robot:15:1 [W] 1003 Invalid number of empty lines between sections (3/2) (empty-lines-between-sections)
+C:\_git\Bootcamp3\tests\sortBy.robot:17:1 [W] 0202 Missing documentation in test case (missing-doc-test-case)
+C:\_git\Bootcamp3\tests\toCart.robot:1:1 [W] 0203 Missing documentation in suite (missing-doc-suite)
+C:\_git\Bootcamp3\tests\toCart.robot:1:1 [I] 0605 All tests in suite share those tags: "smoke". You can define them in Force Tags in suite settings instead (could-be-forced-tags)
+C:\_git\Bootcamp3\tests\toCart.robot:3:1 [W] 1003 Invalid number of empty lines between sections (1/2) (empty-lines-between-sections)
+C:\_git\Bootcamp3\tests\toCart.robot:7:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\toCart.robot:8:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\toCart.robot:9:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\toCart.robot:10:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\toCart.robot:11:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\toCart.robot:14:1 [W] 1003 Invalid number of empty lines between sections (3/2) (empty-lines-between-sections)
+C:\_git\Bootcamp3\tests\toCart.robot:16:1 [W] 0202 Missing documentation in test case (missing-doc-test-case)
+C:\_git\Bootcamp3\tests\toCart.robot:24:1 [W] 0202 Missing documentation in test case (missing-doc-test-case)
+C:\_git\Bootcamp3\tests\toCart.robot:36:1 [W] 1010 Too many blank lines at the end of file (too-many-trailing-blank-lines)
+C:\_git\Bootcamp3\tests\writeReview.robot:1:1 [W] 0203 Missing documentation in suite (missing-doc-suite)
+C:\_git\Bootcamp3\tests\writeReview.robot:3:1 [W] 1003 Invalid number of empty lines between sections (1/2) (empty-lines-between-sections)
+C:\_git\Bootcamp3\tests\writeReview.robot:7:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\writeReview.robot:8:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\writeReview.robot:9:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\writeReview.robot:10:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\writeReview.robot:11:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\writeReview.robot:12:1 [W] 0309 Section variable name should be uppercase (section-variable-not-uppercase)
+C:\_git\Bootcamp3\tests\writeReview.robot:18:1 [W] 1003 Invalid number of empty lines between sections (6/2) (empty-lines-between-sections)
+C:\_git\Bootcamp3\tests\writeReview.robot:20:1 [W] 0202 Missing documentation in test case (missing-doc-test-case)
+C:\_git\Bootcamp3\tests\writeReview.robot:20:1 [W] 0505 Test case has too many keywords inside (14/10) (too-many-calls-in-test-case)
+C:\_git\Bootcamp3\tests\writeReview.robot:39:1 [W] 1010 Too many blank lines at the end of file (too-many-trailing-blank-lines)
