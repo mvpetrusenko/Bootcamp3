@@ -23,13 +23,18 @@ Adding Product to Cart
 
 Deleting Product from Cart
     [Tags]   smoke
+    [Setup]
+    Open Browser    ${URL}   ${BROWSER}
+    Maximize Browser Window
     Click Button    ${cart_button}
     Click Button    ${remove_button}
     Wait Until Page Contains    0 item(s) - $0.00
     Close Browser
 
-
-
+*** Keywords ***
+#Setup for deleting product from cart
+#    get cookie
+#    add product to cart via api
 
 
 

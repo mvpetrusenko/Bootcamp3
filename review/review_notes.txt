@@ -1,4 +1,4 @@
-use DRY approach (vars needlessly repeated across multiple test files) - put it in a resource file / use single test file
+use DRY approach (code needlessly repeated across multiple test files) - put it in a resource file / use single test file
 multiple test with same start (open browser+maximize window) -> use "Test Setup" / "Suite Setup"
 multiple test with same end (close browser) -> Use "Test Teardown" / "Suite Teardown"
 use keyword abstraction - keyword layer for repeated use of kwrds - easier to understand test targets for non-contributors

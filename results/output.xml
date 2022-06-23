@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.5 on win32)" generated="20220623 15:22:57.216" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\_git\Bootcamp3\tests">
+<suite id="s1-s1" name="writeReview" source="C:\_git\Bootcamp3\tests\writeReview.robot">
+<test id="s1-s1-t1" name="Writing Review">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220623 15:22:57.369" level="INFO">Opening browser 'chrome' to base url 'http://tutorialsninja.com/demo/'.</msg>
+<status status="PASS" starttime="20220623 15:22:57.369" endtime="20220623 15:22:59.782"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220623 15:22:59.783" endtime="20220623 15:22:59.904"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${camera_image}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220623 15:22:59.905" endtime="20220623 15:23:00.171"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${camera_image}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220623 15:23:00.171" level="INFO">Clicking element '//img[contains(@alt, "Canon")]'.</msg>
+<status status="PASS" starttime="20220623 15:23:00.171" endtime="20220623 15:23:00.970"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${reviews_tab}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220623 15:23:00.970" endtime="20220623 15:23:01.245"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${reviews_tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220623 15:23:01.246" level="INFO">Clicking element '//a[contains(text(), "Reviews")]'.</msg>
+<status status="PASS" starttime="20220623 15:23:01.246" endtime="20220623 15:23:01.271"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${continue_button}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220623 15:23:01.272" endtime="20220623 15:23:01.540"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_name_field}</arg>
+<arg>qq</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220623 15:23:01.540" level="INFO">Typing text 'qq' into text field '//*[@id="input-name"]'.</msg>
+<status status="PASS" starttime="20220623 15:23:01.540" endtime="20220623 15:23:01.581"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${text_field}</arg>
+<arg>qwerty</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220623 15:23:01.582" level="INFO">Typing text 'qwerty' into text field '//textarea'.</msg>
+<status status="PASS" starttime="20220623 15:23:01.582" endtime="20220623 15:23:01.626"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>rating</arg>
+<arg>5</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220623 15:23:01.628" level="INFO">Selecting '5' from radio button 'rating'.</msg>
+<status status="PASS" starttime="20220623 15:23:01.628" endtime="20220623 15:23:01.663"/>
+</kw>
+<kw name="Radio Button Should Be Set To" library="SeleniumLibrary">
+<arg>rating</arg>
+<arg>5</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<msg timestamp="20220623 15:23:01.663" level="INFO">Verifying radio button 'rating' has selection '5'.</msg>
+<status status="PASS" starttime="20220623 15:23:01.663" endtime="20220623 15:23:01.691"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${continue_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220623 15:23:01.692" level="INFO">Clicking button '//button[contains(text(), "Continue")]'.</msg>
+<status status="PASS" starttime="20220623 15:23:01.692" endtime="20220623 15:23:01.727"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${alert}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220623 15:23:01.727" endtime="20220623 15:23:01.950"/>
+</kw>
+<tag>negative</tag>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220623 15:22:57.368" endtime="20220623 15:23:01.951"/>
+</test>
+<status status="PASS" starttime="20220623 15:22:57.234" endtime="20220623 15:23:01.952"/>
+</suite>
+<status status="PASS" starttime="20220623 15:22:57.217" endtime="20220623 15:23:01.953"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">negative</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="writeReview">Tests.writeReview</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

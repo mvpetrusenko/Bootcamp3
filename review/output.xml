@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.5 on win32)" generated="20220621 18:34:19.385" rpa="false" schemaversion="2">
+<suite id="s1" name="Bootcamp3" source="C:\_git\Bootcamp3">
+<suite id="s1-s1" name="Tests" source="C:\_git\Bootcamp3\tests">
+<suite id="s1-s1-s1" name="countProducts" source="C:\_git\Bootcamp3\tests\countProducts.robot">
+<test id="s1-s1-s1-t1" name="Searching Product">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220621 18:34:19.574" level="INFO">Opening browser 'chrome' to base url 'http://tutorialsninja.com/demo/'.</msg>
+<status status="PASS" starttime="20220621 18:34:19.574" endtime="20220621 18:34:22.920"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220621 18:34:22.921" endtime="20220621 18:34:23.038"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cameras_category}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:23.039" level="INFO">Clicking element '//a[contains(@href, "path=33")]'.</msg>
+<status status="PASS" starttime="20220621 18:34:23.039" endtime="20220621 18:34:23.532"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${products_quantity}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220621 18:34:23.533" endtime="20220621 18:34:23.796"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Showing 1 to 2 of 2</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220621 18:34:23.804" level="INFO">Current page contains text 'Showing 1 to 2 of 2'.</msg>
+<status status="PASS" starttime="20220621 18:34:23.797" endtime="20220621 18:34:23.804"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220621 18:34:23.804" endtime="20220621 18:34:25.881"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220621 18:34:19.573" endtime="20220621 18:34:25.881"/>
+</test>
+<status status="PASS" starttime="20220621 18:34:19.405" endtime="20220621 18:34:25.882"/>
+</suite>
+<suite id="s1-s1-s2" name="searchProduct" source="C:\_git\Bootcamp3\tests\searchProduct.robot">
+<test id="s1-s1-s2-t1" name="Searching Product">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220621 18:34:25.886" level="INFO">Opening browser 'chrome' to base url 'http://tutorialsninja.com/demo/'.</msg>
+<status status="PASS" starttime="20220621 18:34:25.886" endtime="20220621 18:34:28.167"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220621 18:34:28.168" endtime="20220621 18:34:28.286"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_box}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:28.287" level="INFO">Clicking element '//input[@name="search"]'.</msg>
+<status status="PASS" starttime="20220621 18:34:28.287" endtime="20220621 18:34:28.315"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${search_box}</arg>
+<arg>Canon</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:28.316" level="INFO">Typing text 'Canon' into text field '//input[@name="search"]'.</msg>
+<status status="PASS" starttime="20220621 18:34:28.315" endtime="20220621 18:34:28.345"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:28.346" level="INFO">Clicking button '//*[@id="search"]/span/button'.</msg>
+<status status="PASS" starttime="20220621 18:34:28.346" endtime="20220621 18:34:28.722"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>http://tutorialsninja.com/demo/index.php?route=product/search&amp;search=Canon</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220621 18:34:28.722" endtime="20220621 18:34:28.725"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220621 18:34:28.725" endtime="20220621 18:34:30.821"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220621 18:34:25.886" endtime="20220621 18:34:30.821"/>
+</test>
+<status status="PASS" starttime="20220621 18:34:25.883" endtime="20220621 18:34:30.822"/>
+</suite>
+<suite id="s1-s1-s3" name="sortBy" source="C:\_git\Bootcamp3\tests\sortBy.robot">
+<test id="s1-s1-s3-t1" name="Searching Product">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220621 18:34:30.827" level="INFO">Opening browser 'chrome' to base url 'http://tutorialsninja.com/demo/'.</msg>
+<status status="PASS" starttime="20220621 18:34:30.826" endtime="20220621 18:34:33.211"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220621 18:34:33.211" endtime="20220621 18:34:33.327"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${phones_category}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:33.328" level="INFO">Clicking link '//a[contains(text(), "Phones")]'.</msg>
+<status status="PASS" starttime="20220621 18:34:33.328" endtime="20220621 18:34:33.716"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${phones_link}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220621 18:34:33.716" endtime="20220621 18:34:33.718"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${sort_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:33.719" level="INFO">Clicking element '//select[@id="input-sort"]'.</msg>
+<status status="PASS" starttime="20220621 18:34:33.719" endtime="20220621 18:34:33.761"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${sortDesc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:33.762" level="INFO">Clicking element '//option[contains(text(), "Price (High &gt; Low)")]'.</msg>
+<status status="PASS" starttime="20220621 18:34:33.762" endtime="20220621 18:34:34.042"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${desc_link}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220621 18:34:34.042" endtime="20220621 18:34:34.048"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220621 18:34:34.049" endtime="20220621 18:34:36.148"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220621 18:34:30.826" endtime="20220621 18:34:36.148"/>
+</test>
+<status status="PASS" starttime="20220621 18:34:30.823" endtime="20220621 18:34:36.149"/>
+</suite>
+<suite id="s1-s1-s4" name="toCart" source="C:\_git\Bootcamp3\tests\toCart.robot">
+<test id="s1-s1-s4-t1" name="Adding Product to Cart">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220621 18:34:36.153" level="INFO">Opening browser 'chrome' to base url 'http://tutorialsninja.com/demo/'.</msg>
+<status status="PASS" starttime="20220621 18:34:36.153" endtime="20220621 18:34:38.533"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220621 18:34:38.534" endtime="20220621 18:34:38.643"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${cart_button}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220621 18:34:38.644" endtime="20220621 18:34:38.910"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${product_cart_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:38.911" level="INFO">Clicking button '//button[contains(@onclick, "cart.add('43')")]'.</msg>
+<status status="PASS" starttime="20220621 18:34:38.911" endtime="20220621 18:34:38.941"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${added_product}</arg>
+<arg>MacBook</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220621 18:34:38.977" level="INFO">Element '//*[@id="common-home"]/div[1]' contains text 'MacBook'.</msg>
+<status status="PASS" starttime="20220621 18:34:38.941" endtime="20220621 18:34:38.977"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220621 18:34:36.152" endtime="20220621 18:34:38.978"/>
+</test>
+<test id="s1-s1-s4-t2" name="Deleting Product from Cart">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${cart_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:38.979" level="INFO">Clicking button '//button[contains(@class,"btn-inverse")]'.</msg>
+<status status="PASS" starttime="20220621 18:34:38.979" endtime="20220621 18:34:39.001"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${remove_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:39.002" level="INFO">Clicking button '//button[contains(@onclick,"cart")]'.</msg>
+<status status="PASS" starttime="20220621 18:34:39.002" endtime="20220621 18:34:39.032"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>0 item(s) - $0.00</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220621 18:34:44.768" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220621 18:34:44.243" endtime="20220621 18:34:44.768"/>
+</kw>
+<msg timestamp="20220621 18:34:44.785" level="FAIL">Text '0 item(s) - $0.00' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20220621 18:34:39.032" endtime="20220621 18:34:44.785"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220621 18:34:44.786" endtime="20220621 18:34:44.786"/>
+</kw>
+<tag>smoke</tag>
+<status status="FAIL" starttime="20220621 18:34:38.978" endtime="20220621 18:34:44.786">Text '0 item(s) - $0.00' did not appear in 5 seconds.</status>
+</test>
+<status status="FAIL" starttime="20220621 18:34:36.150" endtime="20220621 18:34:44.787"/>
+</suite>
+<suite id="s1-s1-s5" name="writeReview" source="C:\_git\Bootcamp3\tests\writeReview.robot">
+<test id="s1-s1-s5-t1" name="Writing Review">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220621 18:34:44.791" level="INFO">Opening browser 'chrome' to base url 'http://tutorialsninja.com/demo/'.</msg>
+<status status="PASS" starttime="20220621 18:34:44.790" endtime="20220621 18:34:47.236"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220621 18:34:47.236" endtime="20220621 18:34:47.346"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${camera_image}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220621 18:34:47.346" endtime="20220621 18:34:47.611"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${camera_image}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:47.612" level="INFO">Clicking element '//img[contains(@alt, "Canon")]'.</msg>
+<status status="PASS" starttime="20220621 18:34:47.612" endtime="20220621 18:34:48.659"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${reviews_tab}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220621 18:34:48.660" endtime="20220621 18:34:48.930"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${reviews_tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:48.930" level="INFO">Clicking element '//a[contains(text(), "Reviews")]'.</msg>
+<status status="PASS" starttime="20220621 18:34:48.930" endtime="20220621 18:34:48.956"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${continue_button}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220621 18:34:48.956" endtime="20220621 18:34:49.228"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_name_field}</arg>
+<arg>qq</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:49.228" level="INFO">Typing text 'qq' into text field '//*[@id="input-name"]'.</msg>
+<status status="PASS" starttime="20220621 18:34:49.228" endtime="20220621 18:34:49.271"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${text_field}</arg>
+<arg>qwerty</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:49.272" level="INFO">Typing text 'qwerty' into text field '//textarea'.</msg>
+<status status="PASS" starttime="20220621 18:34:49.271" endtime="20220621 18:34:49.318"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>rating</arg>
+<arg>5</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220621 18:34:49.319" level="INFO">Selecting '5' from radio button 'rating'.</msg>
+<status status="PASS" starttime="20220621 18:34:49.319" endtime="20220621 18:34:49.353"/>
+</kw>
+<kw name="Radio Button Should Be Set To" library="SeleniumLibrary">
+<arg>rating</arg>
+<arg>5</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<msg timestamp="20220621 18:34:49.354" level="INFO">Verifying radio button 'rating' has selection '5'.</msg>
+<status status="PASS" starttime="20220621 18:34:49.354" endtime="20220621 18:34:49.386"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${continue_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220621 18:34:49.387" level="INFO">Clicking button '//button[contains(text(), "Continue")]'.</msg>
+<status status="PASS" starttime="20220621 18:34:49.387" endtime="20220621 18:34:49.416"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${alert}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220621 18:34:49.416" endtime="20220621 18:34:49.637"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220621 18:34:49.637" endtime="20220621 18:34:51.745"/>
+</kw>
+<tag>negative</tag>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220621 18:34:44.790" endtime="20220621 18:34:51.745"/>
+</test>
+<status status="PASS" starttime="20220621 18:34:44.788" endtime="20220621 18:34:51.746"/>
+</suite>
+<status status="FAIL" starttime="20220621 18:34:19.403" endtime="20220621 18:34:51.747"/>
+</suite>
+<status status="FAIL" starttime="20220621 18:34:19.386" endtime="20220621 18:34:51.749"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">negative</stat>
+<stat pass="5" fail="1" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="5" fail="1" skip="0" id="s1" name="Bootcamp3">Bootcamp3</stat>
+<stat pass="5" fail="1" skip="0" id="s1-s1" name="Tests">Bootcamp3.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="countProducts">Bootcamp3.Tests.countProducts</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s2" name="searchProduct">Bootcamp3.Tests.searchProduct</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s3" name="sortBy">Bootcamp3.Tests.sortBy</stat>
+<stat pass="1" fail="1" skip="0" id="s1-s1-s4" name="toCart">Bootcamp3.Tests.toCart</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s5" name="writeReview">Bootcamp3.Tests.writeReview</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
